@@ -446,10 +446,10 @@ p {
   line-height: 3.25rem;
   font-family: seconderyfont;
 }
-.account .img_wrapper {
+.account .video_wrapper {
   cursor: pointer;
 }
-.account .img_wrapper iframe {
+.account .video_wrapper iframe {
   border-radius: 15px;
 }
 
@@ -904,7 +904,7 @@ footer .copy_rights {
     height: auto;
     padding: 3.125rem 0 1.25rem 0;
   }
-  .account .img_wrapper {
+  .account .video_wrapper {
     margin-top: 50px;
   }
   .account .right_text {
