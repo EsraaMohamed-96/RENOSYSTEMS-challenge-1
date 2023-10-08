@@ -392,6 +392,7 @@ p {
 }
 
 .compare {
+    margin-bottom: 6.25rem;
     button {
         display: flex;
         justify-content: center;
@@ -408,10 +409,9 @@ p {
 .account {
     background-image: url("../images/DerayahSmart.png");
     background-size: cover;
-    height: 64rem;
-    margin-top: 3.125rem;
+    height: 62.5rem;
     position: relative;
-
+    padding: 23rem 0;
     .right_text {
         display: flex;
         flex-direction: column;
@@ -419,7 +419,6 @@ p {
         align-items: flex-start;
         height: 100%;
         color: #fff;
-        position: absolute;
 
         h4 {
             font-size: 2.5rem;
@@ -429,13 +428,11 @@ p {
     }
 
     .img_wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        height: 100%;
-        position: absolute;
+       
         cursor: pointer;
+        iframe{
+            border-radius:15px;
+        }
 
     }
 
@@ -732,7 +729,13 @@ footer {
     }
 }
 /* responsive part */
-
+@media only screen and (max-width: 1440px) {  
+    html {
+        font-size: 10px;
+        overflow-x: hidden;
+      }
+      
+}
 @media only screen and (max-width: 1024px) {  
     html{
         overflow-x: hidden;
@@ -982,16 +985,11 @@ footer {
         }
     }
     .account {
+        height: auto;
         padding: 3.125rem 0 1.25rem 0;
          .img_wrapper {
-            width: 100%;
-            position: relative;
-            height: 100%;
-            margin-top: 15%;
+            margin-top: 50px;
     
-            img {
-                width: 100%;
-            }
         }
         .right_text {
             margin: 3.125rem 0;
@@ -1098,3 +1096,47 @@ footer {
 
 
 }
+a{
+    cursor: pointer;
+}
+.mega_menu{
+    
+position: relative;
+    .mega_menu-sub{
+        position: absolute;
+        width: 18rem;
+        height: 100%;
+        left: -89%;
+        display: none;
+        top: 0;
+        background: #ededed;
+    }
+}
+
+.parent-child-1{
+    &:hover{
+       &~.mega_menu-sub.child-1{
+        display: flex;
+        background:red
+       }
+    }
+}
+
+.parent-child-2{
+    &:hover{
+       &~.mega_menu-sub.child-2{
+        display: flex;
+        background:green;
+       }
+    }
+}
+
+.parent-child-3{
+    &:hover{
+       &~.mega_menu-sub.child-3{
+        display: flex;
+        background:teal;
+       }
+    }
+}
+
