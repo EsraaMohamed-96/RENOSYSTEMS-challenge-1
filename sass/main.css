@@ -144,6 +144,18 @@ nav .navbar-parts .links .parent {
   display: block;
   position: relative;
 }
+nav .navbar-parts .links .parent label {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.125rem;
+  color: #16151A;
+}
+nav .navbar-parts .links .parent label:hover {
+  color: #f58026;
+}
 nav .navbar-parts .links .parent a {
   text-decoration: none;
   font-size: 1.125rem;
@@ -152,12 +164,13 @@ nav .navbar-parts .links .parent a {
 nav .navbar-parts .links .parent a:hover {
   color: #f58026;
 }
-nav .navbar-parts .links .parent:hover > ul {
+nav .navbar-parts .links .parent:not(:has(.clickableList)):hover ul {
   display: block;
   position: absolute;
 }
 nav .navbar-parts .links .child {
   display: none;
+  position: absolute;
 }
 nav .navbar-parts .links .child .icon {
   width: 3.125rem;
@@ -188,7 +201,9 @@ nav .navbar-parts .links ul {
   width: 18.75rem;
   height: auto;
   border-radius: 0.9375rem;
-  background-color: #fff;
+  background: #f9f9fb !important;
+  top: 7.8rem;
+  border-radius: 0rem 0rem 1rem 1rem;
 }
 nav .navbar-parts .links ul ul ul {
   left: 100%;
@@ -197,11 +212,16 @@ nav .navbar-parts .links ul ul ul {
 }
 nav .navbar-parts .links li {
   margin: 0 1.4375rem;
+  cursor: pointer;
 }
 nav .navbar-parts .links li a {
   text-decoration: none;
   font-size: 1.125rem;
   color: #16151A;
+  text-wrap: nowrap;
+}
+nav .navbar-parts .links li label {
+  text-wrap: nowrap;
 }
 nav .navbar-parts .btns {
   display: flex;
@@ -1000,15 +1020,19 @@ a {
 
 .parent-child-1:hover ~ .mega_menu-sub.child-1 {
   display: flex;
-  background: red;
+  background: #f1f1f1;
 }
 
 .parent-child-2:hover ~ .mega_menu-sub.child-2 {
   display: flex;
-  background: green;
+  background: rgb(228, 228, 228);
 }
 
 .parent-child-3:hover ~ .mega_menu-sub.child-3 {
   display: flex;
-  background: teal;
+  background: #f1f1f1;
+}
+
+#invest-item:checked ~ ul {
+  display: block !important;
 }/*# sourceMappingURL=main.css.map */

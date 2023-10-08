@@ -81,7 +81,10 @@ nav {
 
             }
 
-            .parent a {
+            .parent label {
+                user-select: none;
+                
+                cursor: pointer;
                 text-decoration: none;
                 font-size: 1.125rem;
                 color: #16151A;
@@ -89,17 +92,36 @@ nav {
                 &:hover {
                     color: #f58026;
                 }
+              
             }
 
-            .parent:hover>ul {
-                display: block;
-                position: absolute;
+            .parent a {
+              
+                text-decoration: none;
+                font-size: 1.125rem;
+                color: #16151A;
 
+                &:hover {
+                    color: #f58026;
+                }
+              
+            }
+
+            .parent {
+                &:not(:has(.clickableList)){
+                    &:hover{
+                        ul{
+                            display: block;
+                            position: absolute;
+                        }
+                    }
+                   
+                }
             }
 
             .child {
                 display: none;
-
+                position: absolute;
                 .icon {
                     width: 3.125rem;
                     height: 3.125rem;
@@ -134,7 +156,9 @@ nav {
                 width: 18.75rem;
                 height: auto;
                 border-radius: 0.9375rem;
-                background-color: #fff;
+                background: #f9f9fb !important;
+                    top: 7.8rem;
+                    border-radius: 0rem 0rem 1rem 1rem;
             }
 
             ul ul ul {
@@ -145,11 +169,14 @@ nav {
 
             li {
                 margin: 0 1.4375rem;
-
+                cursor: pointer;
                 a {
                     text-decoration: none;
                     font-size: 1.125rem;
-                    color: #16151A;
+                    color: #16151A;    text-wrap: nowrap ; 
+                }
+                label{
+                    text-wrap: nowrap;
                 }
             }
         }
@@ -1117,7 +1144,7 @@ position: relative;
     &:hover{
        &~.mega_menu-sub.child-1{
         display: flex;
-        background:red
+        background:#f1f1f1;
        }
     }
 }
@@ -1126,7 +1153,7 @@ position: relative;
     &:hover{
        &~.mega_menu-sub.child-2{
         display: flex;
-        background:green;
+        background:rgb(228, 228, 228);
        }
     }
 }
@@ -1135,8 +1162,17 @@ position: relative;
     &:hover{
        &~.mega_menu-sub.child-3{
         display: flex;
-        background:teal;
+        background:#f1f1f1;
        }
     }
 }
+
+#invest-item{
+    &:checked{
+        &~ul{
+          display: block !important;
+        }
+    }
+}
+
 
